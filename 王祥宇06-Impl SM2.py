@@ -1,3 +1,5 @@
+#项目编号错误，该项目中sm3的实现思路在‘王祥宇01’的项目中
+
 from random import randint
 import math
 import sys
