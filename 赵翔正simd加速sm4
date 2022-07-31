@@ -44,7 +44,7 @@ ui k[36];//包含初始化之后的密钥和轮密钥
 void genKey(ui* org) {
     __m128i K = _mm_set_epi32(org[3], org[2], org[1], org[0]);
     __m128i FK = _mm_set_epi32(0xB27022DC, 0x677D9197, 0x56AA3350, 0xA3B1BAC6);
-    K = _mm_xor_epi32(K,FK);
+    K = _mm_xor_si128(K,FK);
     _mm_storeu_epi32(k, K);
     for (int i = 4; i < 36; i++) k[i] = CK[i - 4];//初始化k数组
     ui xorA, xorB, t;
